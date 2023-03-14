@@ -1,14 +1,21 @@
 
 const playerX = 'x';
 const playerO = 'o';
-const cellBoard = document.querySelector('.cellBoard');
-const nextPlayer = document.querySelector('.nextPlayer');
-const outcome = document.querySelector('.outcome');
+const board = document.getElementById("board")
+let playerOne = true
 
 
+console.log(board)
 
  
-                
+        function clicksquare(event){const myCell = event.target
+        myCell.innerText=playerX
+        
+        console.log(myCell)
+        }
+
+        
+
 
         
 
@@ -18,7 +25,7 @@ const outcome = document.querySelector('.outcome');
 
 
   
-
+board.addEventListener("click",clicksquare)
 
  
  

@@ -42,7 +42,7 @@ h3 {
 
 }
 
-.board {
+#board {
     box-sizing: border-box;
     display:flex;
     width: 380px; 
@@ -86,4 +86,13 @@ h3 {
 .cell:nth-child(3){
     border-top:3px solid black;
     border-bottom: 3px solid black;
+}
+
+.hide {
+    display: none;
+
+}
+
+.cell{
+    color: white;
 }

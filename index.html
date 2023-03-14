@@ -2,119 +2,12 @@
     <head>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel = "stylesheet" href="index.css">
-        <script type="text/javascript" src="/index.js">
-            
-
-            const playerX = 'x';
-const playerO = 'o';
-const cellBoard = document.querySelector('.cellBoard');
-const nextPlayer = document.querySelector('.nextPlayer');
-const outcome = document.querySelector('.outcome');
-
-let tttBoard = [['','',''],
-               ['','',''],
-               ['','','',]
-];
-
-
-function playGame(){
-    tttBoard.forEach((cellBoard, index) => {
-        cellBoard.innerHTML = '';
-        cellBoard.addEventListener('click', handleClick.bind(null, cell, index));
-    });
-    };
-
-
-
-function handleClick(cellBoard, index){
-    const tttBoard = cellBoard.innerHTML;
-    if (tttBoard ==='') {
-        if(nextPlayer.innerHTML === 'playerX') {
-            cellBoard.innerHTML = playerX;
-            nextPlayer.innerHTML = 'playerO';
-
-            tttBoard[Math.floor(index / 3)][index % 3] = playerX;
-        }else {
-            cellBoard.innerHTML = playerO;
-            nextPlayer.innerHTML = 'playerX';
-
-            tttBoard[Math.floor(index / 3)][index % 3] = playerO;
-        }
-        }
-
-        tttBoard.removeEventListener('click', handleClick);
-
-        gameVictory();
-        
-
-function gameVictory() {
-    for (let i = 0; i < 3; i++){
-    if (tttBoard[i][0] === tttBoard [i][1] && tttBoard[i][0] === tttBoard[i][2] && tttBoard[i][0] !== '') {
-        showOutcome(tttBoard[i][0]);
-            return;
-     }
-    }
-
-        for (let i = 0; i < 3; i++) {
-        if (tttBoard[0][i] === tttBoard[1][i] && tttBoard[0][i] === tttBoard[2][i] && tttBoard[0][i] !== '') {
-         showOutcome(tttBoard[0][i]);
-        return;
-    }
-}
-
-
-        if (tttBoard[0][0] === tttBoard[1][1] && tttBoard[0][0] === tttBoard[2][2] && tttBoard[0][0] !== '') {
-        showOutcome(tttBoard[0][0]);
-        return;
-        }
-        if (tttBoard[0][2] === tttBoard[1][1] && tttBoard[0][2] === tttBoard[2][0] && tttBoard[0][2] !== '') {
-        showOutcome(tttBoard[0][2]);
-        return;
-}
-
-let count = 0;
-    for (let j = 0; j < 3; j++) {
-    if (tttBoard[i][j] != '') {
-    count++;
-     }
-    }
-}
-    if (count == 9) {
-        showOutcome('Tie');
-             return;
-    }
-}
-
-function showOutcome(message) {
-    if (message === playerX) {
-        outcome.innerHTML = 'Player x has won!';
-    } else if (message === playerO) {
-        outcome.innerHTML = 'Player o has won!'    
-    } else {
-        outcome.innerHTML = 'draw!'
-    }
-    
-
-}
-
-function resetGame() {
-    nextPlayer.innerHTML = 'playerX';
-
-    tttBoard = [['','',''],
-    ['','',''],
-    ['','','',]
-];
-
-playGame();
-}
-
- 
-            </script>
+        <script src="index.js" defer></script>
     </head>
     <body><h1>Tic-Tac-Toe</h1>
         <h2 class="playerX"> Player: x </h2>
         <h3 class="playerO"> Player: o</h3>
-        <div class="board">
+        <div id="board">
         <div class="cell"></div>
         <div class="cell"></div>
         <div class="cell"></div>
